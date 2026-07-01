@@ -1,0 +1,31 @@
+{
+  "name": "ci-csam-api",
+  "version": "0.1.0",
+  "description": "ci-csam-agent — LSS Black Belt CI + basic GAAP + Microsoft Fundamentals. Azure Functions brain + channel webhooks.",
+  "private": true,
+  "main": "dist/src/functions/*.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@azure/data-tables": "^13.3.0",
+    "@azure/identity": "^4.5.0",
+    "@azure/storage-queue": "^12.25.0",
+    "@azure/functions": "^4.5.0",
+    "openai": "^4.73.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@vitest/coverage-v8": "^2.1.0",
+    "rimraf": "^6.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0"
+  }
+}
